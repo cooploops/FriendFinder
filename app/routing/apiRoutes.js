@@ -28,6 +28,13 @@ module.exports = function(app){
     app.post("/api/friends",function(req,res){
         userInfo = req.body;
         friendArr.push(userInfo);
+        let totalDif = 0;
+
+        for(var i=0;i<friendArr.length;i++){
+            for(var j=0;i<friendArr.points.length;i++){
+                totalDif += Math.abs(userInfo.points[j] - friendArr.points[j]);
+            }
+        }
         // code for compatibility stuff
     })
 }

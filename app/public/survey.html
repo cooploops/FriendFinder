@@ -166,6 +166,12 @@
 
 	$.post(currentURL + "/api/friends", userInfo, function (data) {
 		
+
+		$("#name").val("");
+		$("#photo").val("");
+		for(var i=0;i<10;i++){
+			$("q"+i).val("1");
+		};
 	})
 </script>
 
