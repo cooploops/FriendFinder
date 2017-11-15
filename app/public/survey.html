@@ -5,7 +5,7 @@
 	<title>Friend Finder</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
 	  crossorigin="anonymous">
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 	  crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
 	  crossorigin="anonymous"></script>
@@ -22,8 +22,8 @@
 				<input type="text" class="form-control" id="name" placeholder="John Doe" autofocus required>
 			</div>
 			<div class="form-group">
-					<label for="Photo">Link to Photo Image (Required)</label>
-					<input type="text" class="form-control" id="photo" required>
+				<label for="Photo">Link to Photo Image (Required)</label>
+				<input type="text" class="form-control" id="photo" required>
 			</div>
 			<h2>Please select below how strongly you agree or disagree with the following statements</h2>
 			<hr>
@@ -39,7 +39,7 @@
 				</select>
 			</div>
 			<div class="form-group">
-					<h3>Statement 2</h3>
+				<h3>Statement 2</h3>
 				<label for="q2">Mayonaise goes great on sandwiches</label>
 				<select class="form-control" id="q2">
 					<option value="1">1 (Strongly Disagree)</option>
@@ -50,7 +50,7 @@
 				</select>
 			</div>
 			<div class="form-group">
-					<h3>Statement 3</h3>
+				<h3>Statement 3</h3>
 				<label for="q3">As an adult, I appreciate Thanksgiving more than I do Christmas</label>
 				<select class="form-control" id="q3">
 					<option value="1">1 (Strongly Disagree)</option>
@@ -61,7 +61,7 @@
 				</select>
 			</div>
 			<div class="form-group">
-					<h3>Statement 4</h3>
+				<h3>Statement 4</h3>
 				<label for="q4">Nickleback is/was a terrible band</label>
 				<select class="form-control" id="q4">
 					<option value="1">1 (Strongly Disagree)</option>
@@ -72,7 +72,7 @@
 				</select>
 			</div>
 			<div class="form-group">
-					<h3>Statement 5</h3>
+				<h3>Statement 5</h3>
 				<label for="q5">Sleeping in and playing video games all day sounds like a great Saturday</label>
 				<select class="form-control" id="q5">
 					<option value="1">1 (Strongly Disagree)</option>
@@ -83,7 +83,7 @@
 				</select>
 			</div>
 			<div class="form-group">
-					<h3>Statement 6</h3>
+				<h3>Statement 6</h3>
 				<label for="q6">I prefer chunky over smooth peanut butter</label>
 				<select class="form-control" id="q6">
 					<option value="1">1 (Strongly Disagree)</option>
@@ -94,7 +94,7 @@
 				</select>
 			</div>
 			<div class="form-group">
-					<h3>Statement 7</h3>
+				<h3>Statement 7</h3>
 				<label for="q7">The only way to drink coffee is black(same applies to tea)</label>
 				<select class="form-control" id="q7">
 					<option value="1">1 (Strongly Disagree)</option>
@@ -105,7 +105,7 @@
 				</select>
 			</div>
 			<div class="form-group">
-					<h3>Statement 8</h3>
+				<h3>Statement 8</h3>
 				<label for="q8">Dogs are far superior to cats</label>
 				<select class="form-control" id="q8">
 					<option value="1">1 (Strongly Disagree)</option>
@@ -116,7 +116,7 @@
 				</select>
 			</div>
 			<div class="form-group">
-					<h3>Statement 9</h3>
+				<h3>Statement 9</h3>
 				<label for="q9">I prefer Star Wars over Star Trek</label>
 				<select class="form-control" id="q9">
 					<option value="1">1 (Strongly Disagree)</option>
@@ -127,7 +127,7 @@
 				</select>
 			</div>
 			<div class="form-group">
-					<h3>Statement 10</h3>
+				<h3>Statement 10</h3>
 				<label for="q10">Pineapples do not belong on Pizza</label>
 				<select class="form-control" id="q10">
 					<option value="1">1 (Strongly Disagree)</option>
@@ -137,30 +137,36 @@
 					<option value="5">5 (Strongly Agree)</option>
 				</select>
 			</div>
-				<div class="text-center">
-						<button type="submit" id="submit" class="btn btn-primary btn-lg">Submit</button>
-				</div>
+			<div class="text-center">
+				<button type="submit" id="submit" class="btn btn-primary btn-lg">Submit</button>
+			</div>
 		</form>
 		<hr>
 		<footer>
-			<p><a href="/api/friends">API Friends</a> | <a href="https://github.com/cooploops/FriendFinder">GitHub Repo</a></p>
+			<p>
+				<a href="/api/friends">API Friends</a> |
+				<a href="https://github.com/cooploops/FriendFinder">GitHub Repo</a>
+			</p>
 		</footer>
 	</div>
 </body>
 <script type="text/javascript">
-	$("#submit").on("click",function(e){
+	$("#submit").on("click", function (e) {
 		e.preventDefault()
-		user={
-			name:$("#name").val().trim(),
-			photo:$("#photo").val().trim(),
-			points:[$("#q1").val(),$("#q2").val(),$("#q3").val(),$("#q4").val(),$("#q5").val(),$("#q6").val(),$("#q7").val(),$("#q8").val(),$("#q9").val(),$("#q10").val()]
+		userInfo = {
+			name: $("#name").val().trim(),
+			photo: $("#photo").val().trim(),
+			points: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7")
+				.val(), $("#q8").val(), $("#q9").val(), $("#q10").val()
+			]
 		}
 	})
 
 	let currentURL = window.location.origin;
 
-	$.post(currentURL + "/api/friends",user,function(data){
+	$.post(currentURL + "/api/friends", userInfo, function (data) {
 		
 	})
 </script>
+
 </html>
