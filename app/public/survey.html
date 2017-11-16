@@ -156,7 +156,7 @@
 		userInfo = {
 			name: $("#name").val().trim(),
 			photo: $("#photo").val().trim(),
-			points: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7")
+			scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7")
 				.val(), $("#q8").val(), $("#q9").val(), $("#q10").val()
 			]
 		}
@@ -170,7 +170,7 @@
 		$("#name").val("");
 		$("#photo").val("");
 		for(var i=0;i<10;i++){
-			$("q"+i).val("1");
+			$("#q"+i).val("1");
 		};
 	})
 </script>

@@ -29,12 +29,14 @@ module.exports = function(app){
         userInfo = req.body;
         friendArr.push(userInfo);
         let totalDif = 0;
+        let compatible = [];
 
         for(var i=0;i<friendArr.length;i++){
-            for(var j=0;i<friendArr.points.length;i++){
-                totalDif += Math.abs(userInfo.points[j] - friendArr.points[j]);
+            for(var j=0;i<friendArr.scores.length;i++){
+                totalDif += Math.abs(userInfo.scores[j] - friendArr.scores[j]);
             }
+            compatible.push({score:totalDif,friend:friendArr[i]});
         }
-        // code for compatibility stuff
+        
     })
 }
