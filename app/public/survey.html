@@ -147,7 +147,31 @@
 				<a href="https://github.com/cooploops/FriendFinder">GitHub Repo</a>
 			</p>
 		</footer>
+
+		<!-- modal -->
+		<div class="modal fade" id="friendModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">You matched with
+							<span id="friendName"></span>
+						</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<img class="rounded img-fluid mx-auto d-block" id="friendPic" src=>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
 	</div>
+
 </body>
 <script type="text/javascript">
 	$("#submit").on("click", function (e) {
@@ -155,12 +179,14 @@
 		var userInfo = {
 			"name": $("#name").val().trim(),
 			"photo": $("#photo").val().trim(),
-			"scores": [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7")
-				.val(), $("#q8").val(), $("#q9").val(), $("#q10").val()]
+			"scores": [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $(
+					"#q7")
+				.val(), $("#q8").val(), $("#q9").val(), $("#q10").val()
+			]
 		}
 		let currentURL = window.location.origin;
 		console.log(userInfo);
-		$.post("/api/friends", $.param(userInfo,true), function (data) {
+		$.post("/api/friends", $.param(userInfo, true), function (data) {
 			console.log(data);
 
 			$("#name").val("");
@@ -168,6 +194,11 @@
 			for (var i = 0; i <= 10; i++) {
 				$("#q" + i).val("1");
 			};
+
+			$("#friendName").text(data.name);
+			$("#friendPic").attr("src", data.photo);
+			$("#friendModal").modal("toggle");
+
 		})
 	})
 </script>
