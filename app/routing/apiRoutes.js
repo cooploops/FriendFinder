@@ -26,17 +26,24 @@ module.exports = function(app){
     });
 
     app.post("/api/friends",function(req,res){
-        userInfo = req.body;
-        friendArr.push(userInfo);
+        
+        var userInfo = req.body;
         let totalDif = 0;
-        let compatible = [];
+        let compatibleScores = [];
+        let compatibleFriend;
 
         for(var i=0;i<friendArr.length;i++){
-            for(var j=0;i<friendArr.scores.length;i++){
-                totalDif += Math.abs(userInfo.scores[j] - friendArr.scores[j]);
+            for(var j=0;j<friendArr[i].scores.length;j++){
+                totalDif += Math.abs(userInfo.scores[j] - friendArr[i].scores[j]);
             }
-            compatible.push({score:totalDif,friend:friendArr[i]});
+            compatibleScores.push(totalDif);
+            totalDif = 0;
         }
-        
+        compatibleFriend = friendArr[compatibleScores.indexOf(Math.min(...compatibleScores))];
+
+        friendArr.push(userInfo);
+        res.send(compatibleFriend);
+        // compatibleScores = [];
+        // compatibleFriend = null;
     })
 }
